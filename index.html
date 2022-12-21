@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Vibrant</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- <link href="data:image/png;base64,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" rel="icon"> -->
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+ 
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">VIBRANT</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Better Solutions For Your Business</h1>
+          <h2>We are team of talented designers making websites with our beloved clients</h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+  
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+            
+              We are a group of talented people, working together to produce clean and neat products for our client
+              with the best effort.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i>Speed</li>
+              <li><i class="ri-check-double-line"></i>Quality</li>
+              <li><i class="ri-check-double-line"></i>Honesty</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+             Vibrant person means Energetic, conciouse and active person who can takel any complex problems with out any feer.
+             that is why we use it for our team name. Vibrant team is created around a year ago.
+            </p>
+            <a href="#why-us" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us section-bg">
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+            <div class="content">
+              <h3><strong>Why us?</strong></h3>
+              <p>
+                like mentioned before we are vibrant! we never negotiate with our cutomers security. 
+              </p>
+            </div>
+
+            <div class="accordion-list">
+              <ul>
+                <li>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Quality<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                    <p>
+                      Quality is the first priority in our team. we never negotiate with the quality of product we made. our products tells our clean work.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span>Speed <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      like mentioned quality is the first priority of our company, however it is not valuable unless it delivered on time. late work does not guaranty quality.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Honesty <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Having best product is depend on the interest and honest communication of you and us. so same here! we do not negotiate with honesty. 
+                    </p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("assets/img/why-us.png");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/skills.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+            <h3>Our team skills</h3>
+            <p class="fst-italic">
+              We have several team members having different skill and expreriance working with us. 
+            </p>
+
+            <div class="skills-content">
+
+              <div class="progress">
+                <span class="skill">HTML <i class="val">100%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">CSS <i class="val">90%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">JavaScript <i class="val">95%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">Photoshop <i class="val">85%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+               <div class="progress">
+                <span class="skill">Figma <i class="val">95%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+               <div class="progress">
+                <span class="skill">Node <i class="val">90%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+               <div class="progress">
+                <span class="skill">Mongodb <i class="val">95%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>
+            Our team members have diffetent skills depending on there responsibility given. having different skills makes our company flexable to different works.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-phone"></i></div>
+              <h4><a href="">Mobile App</a></h4>
+              <p>
+                Building different IOS and ANDROID apps for our clients.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="">Website</a></h4>
+              <p>Our Speciality falls here! Any kind of websites. </p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="">UI/UX</a></h4>
+              <p>Buiding different websites and moblile app UI and UX.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-layer"></i></div>
+              <h4><a href="">Systems</a></h4>
+              <p>Building robust system, by creating complex and reliable product.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3>Contact With Telegram</h3>
+            <p> We are active in all social medias, but Telegram is our favorite. </p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#">Telegram</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>
+            Our team is exprerianced in different techniques and expreriances. having this exposier gives us strength to takel different challenges.
+          </p>     
+         </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+              <div class="pic"><img src="assets/img/myimg/photo_2021-04-04_14-50-11.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Natnael Yeshiwas</h4>
+                <span>Founder</span>
+                <p>The creator and administrator of Vibrant.</p>
+                <div class="social">
+                  <a href="https://t.me/Natiyeshi"><i class="ri-twitter-fill"></i></a>
+                  <a href="https://twitter.com/natiyeshi16"><i class="ri-twitter-fill"></i></a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+              <div class="pic"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5AOmvXxuMh3mZc_YNHf7dmzTPKSgbaywlivlpAJDN7Q&s" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Bemnet Reta</h4>
+                <span>Graphics designer</span>
+                <p>one of our skilled personal</p>
+                <div class="social">
+                   <a href="https://t.me/Natiyeshi" ><i class="bx bxl-telegram"></i></a>
+              <a href="https://twitter.com/natiyeshi16?"><i class="bx bxl-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pic"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5AOmvXxuMh3mZc_YNHf7dmzTPKSgbaywlivlpAJDN7Q&s" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Selam Aregah</h4>
+                <span>front-end Developer</span>
+                <p>One of our brave female engineer.</p>
+                <div class="social">
+                   <a href="https://t.me/Natiyeshi" ><i class="bx bxl-telegram"></i></a>
+              <a href="https://twitter.com/natiyeshi16?"><i class="bx bxl-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
+              <div class="pic"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5AOmvXxuMh3mZc_YNHf7dmzTPKSgbaywlivlpAJDN7Q&s" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Alemane Tlahun</h4>
+                <span>Accountant</span>
+                <p>Money needs a person who knows it. and Alemaneh is one of them.</p>
+                <div class="social">
+                 <a href="https://t.me/Natiyeshi" ><i class="bx bxl-telegram"></i></a>
+              <a href="https://twitter.com/natiyeshi16?"><i class="bx bxl-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>
+            
+             Your advise is necessary for our future strength, so please do not hesitate to contact us. 
+          </p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>AASTU, Addis Ababa, Ethiopia</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>natiyeshi16@example.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+251945954712</p>
+              </div>
+              
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63078.97347123221!2d38.721601762206845!3d8.925840204314296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b82a7e392203f%3A0xb05f440eacc98f9f!2sAddis%20Ababa%20Science%20and%20Technology%20University!5e0!3m2!1sen!2set!4v1671563295076!5m2!1sen!2set" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe> -->
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" >
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" >
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" ></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <!-- <div class="error-message"></div> -->
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button class="btn btn-primary" onclick="send(this)">Send Message</button></div>
+              <script>
+                function send(file){
+                  file.innerHTML = "send"
+                  file.setAttribute("class","btn btn-success")
+                }
+              </script>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Vibrant</h3>
+            <p>
+              AASTU <br>
+              Addis Ababa,<br>
+              Ethiopia <br><br>
+              <strong>Phone:</strong> +251945954712<br>
+              <strong>Email:</strong> natiyeshi16@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <div class="social-links mt-3">
+              <a href="https://t.me/Natiyeshi" ><i class="bx bxl-telegram"></i></a>
+              <a href="https://twitter.com/natiyeshi16?"><i class="bx bxl-twitter"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Vibrant</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://t.me/Natiyeshi">Natnael Yeshiwas</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
